@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merry Electronics Singapore - Leading Electronics Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,19 +13,21 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #2c3e50;
+            background: #fafbfc;
         }
 
         header {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: white;
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
         }
 
         nav {
@@ -37,68 +40,116 @@
         }
 
         .logo {
+            font-family: 'Poppins', sans-serif;
             font-size: 1.8rem;
-            font-weight: bold;
-            letter-spacing: 1px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         nav a {
-            color: white;
+            color: #e2e8f0;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #60a5fa, #34d399);
+            transition: width 0.3s ease;
         }
 
         nav a:hover {
-            color: #64b5f6;
+            color: #60a5fa;
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         .hero {
-            background: linear-gradient(135deg, #1a237e 0%, #283593 50%, #3949ab 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1e3a8a 100%);
             color: white;
-            padding: 6rem 2rem;
+            padding: 8rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .hero h1 {
+            font-family: 'Poppins', sans-serif;
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: -1px;
         }
 
         .hero p {
             font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+            letter-spacing: 0.3px;
         }
 
         .cta-button {
             display: inline-block;
-            background: #ff9800;
+            background: linear-gradient(135deg, #60a5fa 0%, #34d399 100%);
             color: white;
-            padding: 0.8rem 2rem;
+            padding: 1rem 2.5rem;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             cursor: pointer;
             border: none;
+            font-size: 1rem;
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.3);
         }
 
         .cta-button:hover {
-            background: #f57c00;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(96, 165, 250, 0.4);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
         }
 
         .container {
@@ -108,14 +159,25 @@
         }
 
         section {
-            padding: 4rem 0;
+            padding: 5rem 0;
         }
 
         .section-title {
+            font-family: 'Poppins', sans-serif;
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 1.1rem;
             margin-bottom: 3rem;
-            color: #1a237e;
+            font-weight: 300;
         }
 
         .section-title::after {
@@ -123,8 +185,9 @@
             display: block;
             width: 60px;
             height: 4px;
-            background: #ff9800;
+            background: linear-gradient(90deg, #60a5fa, #34d399);
             margin: 1rem auto 0;
+            border-radius: 2px;
         }
 
         .features {
@@ -135,96 +198,137 @@
 
         .feature-card {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
             text-align: center;
+            border: 1px solid #e2e8f0;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(96, 165, 250, 0.15);
+            border-color: #60a5fa;
         }
 
         .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            animation-delay: 0.2s;
+        }
+
+        .feature-card:nth-child(3) .feature-icon {
+            animation-delay: 0.4s;
+        }
+
+        .feature-card:nth-child(4) .feature-icon {
+            animation-delay: 0.6s;
         }
 
         .feature-card h3 {
-            color: #1a237e;
+            color: #0f172a;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: #64748b;
+            line-height: 1.7;
         }
 
         .about-section {
-            background: #f5f5f5;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
         }
 
         .about-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .about-text h3 {
-            color: #1a237e;
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            color: #0f172a;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
         }
 
         .about-text p {
-            margin-bottom: 1rem;
-            color: #555;
+            margin-bottom: 1.2rem;
+            color: #475569;
             line-height: 1.8;
+            font-weight: 300;
         }
 
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .product-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
         }
 
         .product-card:hover {
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(96, 165, 250, 0.15);
+            transform: translateY(-8px);
+            border-color: #60a5fa;
         }
 
         .product-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, #1a237e 0%, #3949ab 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         .product-info {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .product-info h4 {
-            color: #1a237e;
-            margin-bottom: 0.5rem;
+            color: #0f172a;
+            margin-bottom: 0.7rem;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
-        footer {
-            background: #1a237e;
-            color: white;
-            padding: 2rem;
-            text-align: center;
+        .product-info p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.6;
         }
 
         .contact-section {
@@ -235,33 +339,90 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .contact-card {
-            padding: 1.5rem;
-            background: #f9f9f9;
-            border-radius: 8px;
-            border-left: 4px solid #ff9800;
+            padding: 2rem;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 12px;
+            border-left: 4px solid #60a5fa;
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(96, 165, 250, 0.1);
         }
 
         .contact-card h4 {
-            color: #1a237e;
+            color: #0f172a;
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .contact-card p {
+            color: #475569;
+            font-weight: 300;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
             margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        footer p:first-child {
+            font-weight: 500;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         @media (max-width: 768px) {
             .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
                 font-size: 2rem;
             }
 
             nav ul {
-                gap: 1rem;
+                gap: 1.5rem;
                 font-size: 0.9rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding: 5rem 2rem;
             }
         }
     </style>
@@ -292,6 +453,7 @@
     <!-- Features Section -->
     <section class="container">
         <h2 class="section-title">Why Choose Us</h2>
+        <p class="section-subtitle">Delivering excellence through innovation and customer commitment</p>
         <div class="features">
             <div class="feature-card">
                 <div class="feature-icon">🏆</div>
@@ -320,6 +482,7 @@
     <section class="about-section" id="about">
         <div class="container">
             <h2 class="section-title">About Merry Electronics</h2>
+            <p class="section-subtitle">Leading the electronics industry with integrity and expertise</p>
             <div class="about-content">
                 <div class="about-text">
                     <h3>Leading Electronics Provider in Singapore</h3>
@@ -342,6 +505,7 @@
     <!-- Products Section -->
     <section class="container" id="products">
         <h2 class="section-title">Our Products</h2>
+        <p class="section-subtitle">Comprehensive electronics solutions for every need</p>
         <div class="products-grid">
             <div class="product-card">
                 <div class="product-image">📱</div>
@@ -392,6 +556,7 @@
     <section class="contact-section" id="contact">
         <div class="container">
             <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">We'd love to hear from you</p>
             <div class="contact-info">
                 <div class="contact-card">
                     <h4>📍 Address</h4>
